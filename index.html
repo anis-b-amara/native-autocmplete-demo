@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autocomplete search</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <h1>Autocomplete search</h1>
+    </nav>
+
+    <main class="container">
+      <section class="search-preferences">
+        <label for="preferences">Select your search </label>
+        <select id="preferences" onchange="selectChoice(event)">
+          <option value="">Please choose an option</option>
+          <option value="users">Users</option>
+          <option value="posts">Posts</option>
+        </select>
+      </section>
+      <section class="search-box">
+        <label for="search" id="search-label">Search</label>
+        <input
+          id="search-input"
+          type="text"
+          id="search"
+          placeholder="Enter your search"
+          disabled
+        />
+        <div id="search-list" class="search-list"></div>
+      </section>
+      <section class="search-result">
+        <div id="result" class="search-result_box"></div>
+      </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
