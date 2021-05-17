@@ -51,7 +51,6 @@ xhrPosts.onerror = function () {
 function selectChoice(e) {
   userSelect = e.target.value;
   var searchLabel = document.getElementById("search-label");
-  console.log(searchLabel);
   if (userSelect) {
     searchLabel.innerText = "Search for " + userSelect;
     searchInput.removeAttribute("disabled");
@@ -71,10 +70,8 @@ function selectChoice(e) {
 function autocompleteSearch(e) {
   var searchText = e.target.value;
   var regex = new RegExp(searchText, "gi");
-  console.log(searchText);
   if (searchText.length === 0) {
     filteredList = [];
-    console.log(filteredList);
 
     showList(filteredList);
     return;
@@ -83,13 +80,11 @@ function autocompleteSearch(e) {
     filteredList = fullUsersList.filter(function (user) {
       return user.name.match(regex);
     });
-    console.log(filteredList);
   }
   if (userSelect === "posts") {
     filteredList = fullPostsList.filter(function (post) {
       return post.title.match(regex);
     });
-    console.log(filteredList);
   }
 
   showList(filteredList);
@@ -124,7 +119,6 @@ function showList(filteredList) {
         return itemDiv;
       })
       .reduce(function (acc, item) {
-        console.log(item);
         acc.appendChild(item);
         return acc;
       }, searchList);
